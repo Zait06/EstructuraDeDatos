@@ -6,4 +6,5 @@ typedef struct Node {
     struct Node* next;
 } Node;
 
-Node create(int data);
+Node* create_node(int data);
+void print_node(Node *node);
