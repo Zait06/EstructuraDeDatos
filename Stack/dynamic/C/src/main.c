@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <time.h>
 
-#include "menu.h"
+#include "menu/menu.h"
 
 int main() {
     Stack stack;

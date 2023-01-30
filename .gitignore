@@ -2,3 +2,5 @@
 *.out
 *_project
 *.o
+node_module
+build/

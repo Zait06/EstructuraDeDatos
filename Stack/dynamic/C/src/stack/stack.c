@@ -20,6 +20,11 @@ Node* pop(Stack* stack) {
     return node;
 }
 
+Node* peek(Stack* stack) {
+    if (is_empty(stack)) return NULL;
+    return stack->head;
+}
+
 void print_stack(Stack* stack) {
     Node* aux_node = stack->head;
     printf("\tHEAD -> ");

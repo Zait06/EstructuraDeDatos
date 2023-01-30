@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#include "stack.h"
+#include "../stack/stack.h"
 
 int menu();
 bool action(Stack*, int);

@@ -1,6 +1,6 @@
 #include <stdbool.h>
 
-#include "node.h"
+#include "../node/node.h"
 
 typedef struct Stack {
     Node* head;
@@ -10,4 +10,5 @@ void init_stack(Stack* stack);
 bool is_empty(Stack* stack);
 void push(Stack* stack, Node* node);
 Node* pop(Stack* stack);
+Node* peek(Stack* stack);
 void print_stack(Stack* stack);
