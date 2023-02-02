@@ -2,5 +2,6 @@
 *.out
 *_project
 *.o
-node_module
+node_modules
 build/
+*.js

@@ -1,0 +1,19 @@
+{
+  "name": "estructura-de-datos",
+  "version": "1.0.0",
+  "description": "Repositorio de estructura de datos",
+  "repository": "git@github.com:Zait06/EstructuraDeDatos.git",
+  "author": "Zait Hernández <zait-hdez@hotmail.com>",
+  "license": "MIT",
+  "type": "commonjs",
+  "scripts": {
+    "stack:static": "node ./build/Stack/static/index.js"
+  },
+  "dependencies": {
+    "readline": "^1.3.0",
+    "typescript": "^4.9.5"
+  },
+  "devDependencies": {
+    "@types/n-readlines": "^1.0.3"
+  }
+}
