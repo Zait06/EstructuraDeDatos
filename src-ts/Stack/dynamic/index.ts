@@ -51,7 +51,7 @@ const action = (option: number) => {
     });
 }
 
-function show_menu() {
+const show_menu = () => {
     console.log("Choose an option")
     menu.forEach((e) => {
         console.log(`${e}`);
