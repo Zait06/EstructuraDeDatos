@@ -1,8 +1,9 @@
 import Stack from "./Stack";
 import * as readline from 'readline';
 import { stdin as input, stdout as output } from 'node:process';
+import { Node } from "../../utils/Node";
 
-var stack: Stack;
+var stack = new Stack();
 
 const menu = [
     "1.- Push",
@@ -25,10 +26,10 @@ const action = (option: number) => {
         case 1:
             break;
         case 2:
-            console.log("Pop:", stack.pop());
+            console.log("Pop:", stack.pop()?.data);
             break;
         case 3:
-            console.log("Top:", stack.peek());
+            console.log("Top:", stack.peek()?.data);
             break;
         case 4:
             console.log(stack.toString());
@@ -41,7 +42,11 @@ const action = (option: number) => {
     }
     if (option !== 1) return show_menu();
     rl.question('Write a value: ', (answer) => {
-        stack.push(parseInt(answer));
+        const node = {
+            data: parseInt(answer),
+            next: undefined
+        } as Node
+        stack.push(node);
         show_menu();
     });
 }
@@ -56,8 +61,5 @@ function show_menu() {
     });
 }
 
-console.log("\tStatic Stack\n");
-rl.question('Stack size: ', (answer) => {
-    stack = new Stack(parseInt(answer));
-    show_menu();
-});
+console.log("\tDynamic Stack\n");
+show_menu();
