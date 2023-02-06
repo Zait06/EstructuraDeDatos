@@ -17,15 +17,25 @@ export default class Stack {
     }
 
     pop(): Node | undefined {
-        if (this.is_empty()) return undefined;
-        const node = this.head;
-        if (!node) return undefined;
-        this.head = node.next;
-        return node;
+        try {
+            if (this.is_empty()) throw new Error("Stack is empty.");
+            const node = this.head;
+            if (!node) return undefined;
+            this.head = node.next;
+            return node;
+        } catch (err: any) {
+            console.error
+        }
     }
 
     peek(): Node | undefined {
-        return this.head;
+        try {
+            if (this.is_empty())
+                throw "Stack is empty. Please, push some value";
+            return this.head;
+        } catch (err: any) {
+            console.error(err)
+        }
     }
 
     toString(): string {

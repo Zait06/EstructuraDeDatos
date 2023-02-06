@@ -18,7 +18,7 @@ export default class Stack {
     push(value: number) {
         try {
             if (this.is_full())
-                throw "Stack is full. Can't push more data";
+                throw "Stack is full. Can't push more data.";
             this._stack.push(value);
         } catch (err) {
             console.error(err)
@@ -28,7 +28,7 @@ export default class Stack {
     pop(): number | undefined {
         try {
             if (this.is_empty())
-                throw "Stack is empty. Can't pop more data";
+                throw "Stack is empty.";
             return this._stack.pop();
         } catch (err: any) {
             console.error(err)
@@ -47,9 +47,7 @@ export default class Stack {
 
     toString(): string {
         let str = "\tHEAD -> ";
-        for (let i = this._stack.length - 1; i >= 0; i--) {
-            str += `${this._stack[i]} -> `
-        }
+        str += [...this._stack].reverse().join(" -> ")
         str += "NULL\n";
         return str;
     }

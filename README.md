@@ -1,6 +1,6 @@
 # Estructura de datos
 
-Este repositorio se hizo con el proposito de darle a los curiosos de la programación un lugar más dónde se pueda mostrar como se programan algunas estructuras de datos.
+Este repositorio se hizo con el propósito de darle a los curiosos de la programación un lugar más dónde puedan investigar e interactuar con algunas estrcuturas de datos.
 
 Las estructuras están programadas en los siguientes lenguajes de programación:
 
@@ -18,14 +18,14 @@ Para saber el contenido de este repositorio, puede ver el [temario](/docs/README
 
 ## Ejecutar código c
 
-Diríjase al código fuente de alguna de las estructuras y ejecuta la siguiente
+al código fuente de alguna de las estructuras y ejecuta la siguiente
 
 ```sh
 mkdir build
 cd build
 cmake ..
 make
-./name
+./project_name
 ```
 
 Dónde `name` es el nombre del ejecutable de cada una de las estructuras. Puedes ver mas informacion en cada archivo de configuración `CMakeLists.txt`.
