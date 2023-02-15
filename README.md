@@ -16,11 +16,12 @@ Para saber el contenido de este repositorio, puede ver el [temario](/docs/README
 - CMake
 - Node.js >= 16
 
-## Ejecutar código c
+## Ejecutar código C
 
-al código fuente de alguna de las estructuras y ejecuta la siguiente
+Dirigirse a la carpeta `src-c` y alojarse en la carpeta de alguna de las estructuras
 
-```sh
+```shell
+cd struct/path
 mkdir build
 cd build
 cmake ..
@@ -28,14 +29,19 @@ make
 ./project_name
 ```
 
-Dónde `name` es el nombre del ejecutable de cada una de las estructuras. Puedes ver mas informacion en cada archivo de configuración `CMakeLists.txt`.
-
-## Ejecutar codigo typescript
+## Ejecutar código Typescript
 
 Para poder correr cualquier tipo de codigo, debemos instalar los paquetes del repositorio (se recomienda usar `yarn`). Basta con escribir la siguiente sentencia.
 
 ```shell
-    yarn run [struct]:[type]
+yarn run [struct]:[type]
 ```
 
 Donde `[struct]` es el nombre de la esctructura y `[type]` si es `dynamic` o `static`
+
+## Ejecutar código Python
+
+```shell
+cd struct/path
+python main.py
+```
