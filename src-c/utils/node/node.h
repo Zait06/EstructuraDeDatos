@@ -3,7 +3,7 @@
 
 typedef struct Node {
   int data;
-  Node* next;
+  struct Node* next;
 } Node;
 
 Node* create_node(int data);

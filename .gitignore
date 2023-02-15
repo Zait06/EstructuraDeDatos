@@ -3,6 +3,6 @@
 *_project
 *.o
 node_modules
-build/
+*build*/
 *.js
 __pycache__/
