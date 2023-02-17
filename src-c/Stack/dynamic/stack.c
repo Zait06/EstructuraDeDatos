@@ -1,21 +1,34 @@
-#include "menu.h"
+#include "stack.h"
 
-int menu() {
-  int option = 0;
-  char* options[] = {
-      "1.- Push",
-      "2.- Pop",
-      "3.- Show top",
-      "4.- Print stack",
-      "5.- Exit"};
+void init_stack(Stack* stack) { stack->head = NULL; }
 
-  printf("Select an option:\n");
-  for (int i = 0; i < 5; i++) {
-    printf("%s\n", options[i]);
+bool is_empty(Stack* stack) { return stack->head == NULL; }
+
+void push(Stack* stack, Node* node) {
+  node->next = stack->head;
+  stack->head = node;
+}
+
+Node* pop(Stack* stack) {
+  if (is_empty(stack)) return NULL;
+  Node* node = stack->head;
+  stack->head = stack->head->next;
+  return node;
+}
+
+Node* peek(Stack* stack) {
+  if (is_empty(stack)) return NULL;
+  return stack->head;
+}
+
+void print_stack(Stack* stack) {
+  Node* aux_node = stack->head;
+  printf("\tHEAD -> ");
+  while (aux_node != NULL) {
+    printf("%d -> ", aux_node->data);
+    aux_node = aux_node->next;
   }
-  printf("Type your option: ");
-  scanf("%d", &option);
-  return option;
+  printf("NULL\n");
 }
 
 bool action(Stack* stack, int option) {

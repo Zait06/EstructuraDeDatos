@@ -23,7 +23,6 @@
   },
   "editor.formatOnSave": true,
   "cmake.configureOnOpen": false,
-  "python.analysis.extraPaths": [
-    "./src-py/utils"
-  ]
+  "python.analysis.extraPaths": ["./src-py/utils"],
+  "cmake.sourceDirectory": "${workspaceFolder}/src-c"
 }

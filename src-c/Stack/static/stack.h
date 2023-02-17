@@ -16,3 +16,4 @@ int pop(Stack* stack);
 int peek(Stack* stack);
 void print_stack(Stack* stack);
 void destroy_stack(Stack* stack);
+bool action(Stack* stack, int option);

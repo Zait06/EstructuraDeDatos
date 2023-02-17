@@ -1,5 +1,5 @@
 #include <stdbool.h>
-#include "../../../../utils/node/node.h"
+#include "../../utils/node/node.h"
 
 typedef struct Stack {
   Node* head;
@@ -11,3 +11,4 @@ void push(Stack* stack, Node* node);
 Node* pop(Stack* stack);
 Node* peek(Stack* stack);
 void print_stack(Stack* stack);
+bool action(Stack* stack, int option);

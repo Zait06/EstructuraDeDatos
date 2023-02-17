@@ -21,7 +21,7 @@ void enqueue(Queue *queue, int value) {
   care_step(queue, false);
 }
 
-int *dequeue(Queue *queue) {
+int dequeue(Queue *queue) {
   if (is_empty(queue)) return;
 
   queue->count--;
