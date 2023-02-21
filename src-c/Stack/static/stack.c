@@ -3,12 +3,12 @@
 void init_stack(Stack* stack, int size) {
   stack->_stack = (int*)calloc(size, sizeof(int));
   stack->count = 0;
-  stack->size = size;
+  stack->maxSize = size;
 }
 
 bool is_empty(Stack* stack) { return !stack->count; }
 
-bool is_full(Stack* stack) { return stack->count == stack->size; }
+bool is_full(Stack* stack) { return stack->count == stack->maxSize; }
 
 void push(Stack* stack, int value) {
   if (is_full(stack)) return;

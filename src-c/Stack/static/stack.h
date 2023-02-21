@@ -5,7 +5,7 @@
 typedef struct Stack {
   int* _stack;
   int count;
-  int size;
+  int maxSize;
 } Stack;
 
 void init_stack(Stack* stack, int size);
