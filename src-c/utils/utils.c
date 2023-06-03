@@ -1,4 +1,4 @@
-#include "menu.h"
+#include "utils.h"
 
 int menu(char** options, int size, bool full, void (*ptr)(char**, int*, bool)) {
   int option = 0;
@@ -21,4 +21,12 @@ int menu(char** options, int size, bool full, void (*ptr)(char**, int*, bool)) {
 void copy_options(char** src, char** output, int size) {
   for (int i = 0; i < size; i++)
     output[i] = src[i];
+}
+
+void clear_output() {
+#ifdef __unix__
+  system("clear");
+#else
+  system("cls");
+#endif
 }

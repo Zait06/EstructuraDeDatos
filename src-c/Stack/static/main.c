@@ -1,7 +1,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "../../utils/menu/menu.h"
+#include "../../utils/utils.h"
 #include "stack.h"
 
 char* options[] = {
@@ -23,8 +23,7 @@ int main() {
   Stack stack;
   void (*ptrFunc)(char**, int*, bool) = &printFull;
 
-  printf("\e[1;1H\e[2J");
-  printf("\n\tSimple Stack\n");
+  printf("\n\Static Stack\n");
 
   int size;
   printf("Input size stack: ");

@@ -37,7 +37,7 @@ void print_stack(Stack* stack) {
 
 bool action(Stack* stack, int option) {
   int value;
-  printf("\e[1;1H\e[2J");
+  clear_output();
   printf("\n");
   switch (option) {
     case 1:
@@ -48,12 +48,10 @@ bool action(Stack* stack, int option) {
       printf("\n");
       return true;
     case 2:
-      printf("Pop: %d", pop(stack));
-      printf("\n");
+      printf("Pop: %d\n", pop(stack));
       return true;
     case 3:
-      printf("Top: %d", peek(stack));
-      printf("\n");
+      printf("Top: %d\n", peek(stack));
       return true;
     case 4:
       print_stack(stack);

@@ -33,7 +33,7 @@ void print_stack(Stack* stack) {
 
 bool action(Stack* stack, int option) {
   int value;
-  printf("\e[1;1H\e[2J");
+  clear_output();
   printf("\n");
   switch (option) {
     case 1:

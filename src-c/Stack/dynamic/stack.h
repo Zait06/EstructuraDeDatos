@@ -1,5 +1,6 @@
 #include <stdbool.h>
 #include "../../utils/node/node.h"
+#include "../../utils/utils.h"
 
 typedef struct Stack {
   Node* head;

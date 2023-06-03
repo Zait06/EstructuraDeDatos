@@ -52,4 +52,46 @@ void print_queue(Queue *queue) {
   printf(" <- TAIL\n");
 }
 
+int front(Queue *queue) {
+  if (is_empty(queue)) return -1;
+  return queue->_queue[queue->head];
+}
+
+int back(Queue *queue) {
+  if (is_empty(queue)) return -1;
+  return queue->_queue[queue->tail];
+}
+
+bool action(Queue *queue, int option) {
+  clear_output();
+  switch (option) {
+    int value;
+    case 1:
+      if (is_full(queue)) return true;
+      printf("Write a value: ");
+      scanf("%d", &value);
+      enqueue(queue, value);
+      printf("\n");
+      return true;
+    case 2:
+      printf("Dequeue: %d\n", dequeue(queue));
+      return true;
+    case 3:
+      printf("Top: %d\n", front(queue));
+      return true;
+    case 4:
+      printf("Back: %d\n", back(queue));
+      return true;
+    case 5:
+      print_queue(queue);
+      printf("\n");
+      return true;
+    case 6:
+      return false;
+    default:
+      printf("Option doesn't exist. Please, try again.\n");
+      return true;
+  }
+}
+
 void destroy_stack(Queue *queue) { free(queue->_queue); }

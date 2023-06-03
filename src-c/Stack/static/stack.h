@@ -1,6 +1,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "../../utils/utils.h"
 
 typedef struct Stack {
   int* _stack;

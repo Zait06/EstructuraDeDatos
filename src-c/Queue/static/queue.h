@@ -17,4 +17,7 @@ void enqueue(Queue* queue, int value);
 int dequeue(Queue* queue);
 void care_step(int maxSize, int* pipe);
 void print_queue(Queue* queue);
+int front(Queue* queue);
+int back(Queue* queue);
+bool action(Queue* queue, int option);
 void destroy_stack(Queue* queue);

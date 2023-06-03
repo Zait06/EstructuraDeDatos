@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "../../utils/menu/menu.h"
+#include "../../utils/utils.h"
 #include "stack.h"
 
 char* options[] = {
@@ -17,8 +17,8 @@ int main() {
 
   srand(time(NULL));
 
-  printf("\e[1;1H\e[2J");
-  printf("\n\tSimple Stack\n");
+  clear_output();
+  printf("\n\tDynamic Stack\n");
 
   init_stack(&stack);
 

@@ -1,15 +1,16 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "../../utils/menu/menu.h"
+#include "../../utils/utils.h"
 #include "queue.h"
 
 char* options[] = {
-    "1.- Enqueue",
-    "2.- Dequeue",
-    "3.- Show top",
-    "4.- Print queue",
-    "5.- Exit"};
+    "1. Enqueue",
+    "2. Dequeue",
+    "3. Show top",
+    "4. Show back",
+    "5. Print queue",
+    "6. Exit"};
 
 void printFull(char** options, int* size, bool full) {
   if (!full) return;
@@ -21,19 +22,23 @@ void printFull(char** options, int* size, bool full) {
 
 int main() {
   Queue queue;
+  void (*ptrFunc)(char**, int*, bool) = &printFull;
 
-  init_queue(&queue, 5);
+  clear_output();
+  printf("\n\tSimple Static Queue\n");
 
-  enqueue(&queue, 1);
-  enqueue(&queue, 2);
-  enqueue(&queue, 3);
-  dequeue(&queue);
-  dequeue(&queue);
-  enqueue(&queue, 4);
-  enqueue(&queue, 5);
-  enqueue(&queue, 6);
+  int size;
+  printf("Input size queue: ");
+  scanf("%d", &size);
 
-  print_queue(&queue);
+  init_queue(&queue, size);
+
+  bool doit = true;
+  while (doit) {
+    bool full = is_full(&queue);
+    if (full) printf("The queue is full\n\n");
+    doit = action(&queue, menu(options, 5, full, ptrFunc));
+  }
 
   return 0;
 }

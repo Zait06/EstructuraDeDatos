@@ -3,6 +3,8 @@
 - [Definición](#definición)
 - [Static](#static)
 - [Dynamic](#dynamic)
+  - [Push Action](#push-action)
+  - [Pop Action](#pop-action)
 
 ## Definición
 
@@ -20,3 +22,78 @@ Otro de los metodos que se pueden encontrar dentro de una pila son:
 ## Static
 
 ## Dynamic
+
+```mermaid
+flowchart TB;
+  subgraph "Init state"
+  direction LR
+    Head-->NULL
+  end
+
+  subgraph "Element"
+  direction LR
+    Data-->A[NULL]
+  end
+```
+
+### Push Action
+
+```mermaid
+flowchart LR;
+  subgraph "Push Action"
+  direction LR
+
+    subgraph "State 1.1"
+      direction LR
+      Head-.->NULL
+      Data01-->NULL
+      Head-->Data01
+    end
+
+    subgraph "State 1.2"
+    direction LR
+      A[Head]-->B[Data01]
+      B[Data01]-->C[NULL]
+    end
+
+    subgraph "State 2.1"
+    direction LR
+      D[Data01]-->F[NULL]
+      E[Head]-.->D[Data01]
+      E[Head]-->Data02
+      Data02-->D[Data01]
+    end
+
+    subgraph "State 2.2"
+    direction LR
+      G[Data01]-->H[NULL]
+      I[Head]-->J[Data02]
+      J[Data02]-->G[Data01]
+    end
+
+  end
+```
+
+### Pop Action
+
+```mermaid
+flowchart LR;
+    subgraph "Pop Action"
+    direction LR
+      subgraph "State 1"
+      direction LR
+        Data01-->NULL
+        Head-.->Data03
+        Head-->Data02
+        Data02-->Data01
+        Data03-->Data02
+      end
+
+      subgraph "State 2"
+      direction LR
+        A[Data01]-->D[NULL]
+        C[Head]-->B[Data02]
+        B[Data02]-->A[Data01]
+      end
+    end
+```
