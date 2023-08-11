@@ -37,7 +37,7 @@ int main() {
   while (doit) {
     bool full = is_full(&queue);
     if (full) printf("The queue is full\n\n");
-    doit = action(&queue, menu(options, 5, full, ptrFunc));
+    doit = action(&queue, menu(options, 6, full, ptrFunc));
   }
 
   return 0;

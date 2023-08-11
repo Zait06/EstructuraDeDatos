@@ -25,7 +25,7 @@ void enqueue(Queue *queue, int value) {
 }
 
 int dequeue(Queue *queue) {
-  if (is_empty(queue)) return;
+  if (is_empty(queue)) return -1;
 
   queue->count--;
   int *node = queue->_queue[queue->head];
@@ -36,6 +36,7 @@ int dequeue(Queue *queue) {
 void care_step(int maxSize, int *pipe) {
   int temp = *pipe;
   *pipe = ++temp;
+  printf("%d - %d", maxSize, *pipe);
   if (maxSize == *pipe) *pipe = 0;
 }
 
@@ -59,7 +60,7 @@ int front(Queue *queue) {
 
 int back(Queue *queue) {
   if (is_empty(queue)) return -1;
-  return queue->_queue[queue->tail];
+  return queue->_queue[queue->tail - 1];
 }
 
 bool action(Queue *queue, int option) {
