@@ -1,20 +1,16 @@
 from Stack import Node, Stack
-from os import system, name
+import os
 
-options = [
-    "1.- Push",
-    "2.- Pop",
-    "3.- Show top",
-    "4.- Print stack",
-    "5.- Exit"
-]
+options = ["1.- Push", "2.- Pop", "3.- Show top", "4.- Print stack", "5.- Exit"]
+
 
 def clear():
     # for windows
-    if name == 'nt':
-        system('cls')
+    if os.name == "nt":
+        os.system("cls")
     else:
-        system('clear')
+        os.system("clear")
+
 
 def action(stack: Stack, option: int) -> None:
     clear()
@@ -37,18 +33,18 @@ def action(stack: Stack, option: int) -> None:
     else:
         print("Option doesn't exists. Please, try again.\n")
         return True
-        
+
 
 if __name__ == "__main__":
     size = int(input("Input the stack size: "))
     stack = Stack()
     print("\n\tStatic Stack\n")
-    
+
     run = True
-    while (run):
+    while run:
         print("\nChoose an option\n")
         print("\n".join(options) + "\n")
         option = int(input("Type an option: "))
         run = action(stack, option)
-        
+
     del stack

@@ -14,9 +14,9 @@ if(BUILD_STATIC_STACK)
     message(STATUS "Build static stack")
     set(
         SOURCES_FILES
-        Stack/static/main.c 
-        Stack/static/stack.c 
-        utils/utils.c
+        src/Stack/static/main.c 
+        src/Stack/static/stack.c 
+        src/utils/utils.c
     )
     add_executable(static_stack ${SOURCES_FILES})
 endif(BUILD_STATIC_STACK)
@@ -25,10 +25,10 @@ if(BUILD_DYNAMIC_STACK)
     message(STATUS "Build dynamic stack")
     set(
         SOURCES_FILES
-        Stack/dynamic/main.c 
-        Stack/dynamic/stack.c 
-        utils/node/node.c
-        utils/utils.c
+        src/Stack/dynamic/main.c 
+        src/Stack/dynamic/stack.c 
+        src/utils/node/node.c
+        src/utils/utils.c
     )
     add_executable(dynamic_stack ${SOURCES_FILES})
 endif(BUILD_DYNAMIC_STACK)
@@ -37,9 +37,9 @@ if(BUILD_STATIC_QUEUE)
     message(STATUS "Build static queue")
     set(
         SOURCES_FILES
-        Queue/static/main.c 
-        Queue/static/queue.c 
-        utils/utils.c
+        src/Queue/static/main.c 
+        src/Queue/static/queue.c 
+        src/utils/utils.c
     )
     add_executable(static_queue ${SOURCES_FILES})
 endif(BUILD_STATIC_QUEUE)

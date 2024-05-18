@@ -7,8 +7,8 @@
 char* options[] = {
     "1. Enqueue",
     "2. Dequeue",
-    "3. Show top",
-    "4. Show back",
+    "3. Show head",
+    "4. Show tail",
     "5. Print queue",
     "6. Exit"};
 

@@ -5,7 +5,8 @@
     "string_view": "c",
     "stdio.h": "c",
     "stdbool.h": "c",
-    "queue.h": "c"
+    "queue.h": "c",
+    "stdlib.h": "c"
   },
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 2, ColumnLimit: 0, IncludeBlocks: Merge, IndentGotoLabels: true, KeepEmptyLinesAtTheStartOfBlocks: true}",
   "[markdown]": {

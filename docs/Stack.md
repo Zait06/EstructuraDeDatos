@@ -3,8 +3,9 @@
 - [Definición](#definición)
 - [Static](#static)
 - [Dynamic](#dynamic)
-  - [Push Action](#push-action)
-  - [Pop Action](#pop-action)
+  - [Acción Push](#push-action)
+  - [Acción Pop](#pop-action)
+- [Diarama a clases](#diagrama-de-clases)
 
 ## Definición
 
@@ -96,4 +97,29 @@ flowchart LR;
         B[Data02]-->A[Data01]
       end
     end
+```
+
+## Diagrama de clases
+
+```mermaid
+---
+title: Diagrama de pila
+---
+classDiagram
+
+class Node {
+  +int data
+  +Node next
+}
+
+class Stack {
+  -Node head
+  +is_empty() bool
+  +push(Node node)
+  +pop() Node
+  +peek() Node
+  +toString() String
+}
+
+Stack ..> Node: use
 ```

@@ -34,6 +34,10 @@ make
 Para poder correr cualquier tipo de codigo, debemos instalar los paquetes del repositorio (se recomienda usar `yarn`). Basta con escribir la siguiente sentencia.
 
 ```shell
+# Build all projects
+yarn run build_ts
+
+# Run some project
 yarn run [struct]:[type]
 ```
 
