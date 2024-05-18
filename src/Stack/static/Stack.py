@@ -23,8 +23,8 @@ class Stack:
             if self.is_full():
                 raise Exception("Stack is full. Can't push more data")
             self._stack.append(value)
-        except Exception as exc:
-            msg = exc.args
+        except Exception as exp:
+            msg = exp.args
             print(f"Error: {msg[0]}")
 
     def pop(self) -> int:
@@ -32,13 +32,13 @@ class Stack:
             if self.is_empty():
                 raise Exception("Stack is empty.")
             return self._stack.pop()
-        except Exception as exc:
-            print(exc[0])
+        except Exception as exp:
+            print(exp[0])
 
     def peek(self) -> int:
         try:
             if self.is_empty():
                 raise Exception("Stack is empty.")
             return self._stack[-1]
-        except Exception as exc:
-            print(exc[0])
+        except Exception as exp:
+            print(exp[0])

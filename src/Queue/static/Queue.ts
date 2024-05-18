@@ -1,6 +1,6 @@
 export default class Queue {
   private _queue: Array<number>;
-  size: number;
+  private size: number;
 
   constructor(size: number) {
     this._queue = new Array<number>();
