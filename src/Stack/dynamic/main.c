@@ -16,14 +16,12 @@ int main() {
   Stack stack;
 
   srand(time(NULL));
+  init_stack(&stack);
 
   clear_output();
   printf("\n\tDynamic Stack\n");
 
-  init_stack(&stack);
-
-  bool doit = true;
-  while (doit) doit = action(&stack, menu(options, 5, false, NULL));
+  while (action(&stack, menu(options, 5, false, NULL)));
 
   return 0;
 }

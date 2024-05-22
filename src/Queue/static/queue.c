@@ -19,7 +19,7 @@ int dequeue(Queue *queue) {
   if (is_empty(queue)) return -1;
 
   queue->count--;
-  int node = &(queue->_queue[0]);
+  int node = queue->_queue[0];
   for (int idx = 1; idx <= queue->count; idx++)
     queue->_queue[idx - 1] = queue->_queue[idx];
   return node;
@@ -29,7 +29,7 @@ void print_queue(Queue *queue) {
   printf("\nFRONT ->");
 
   for (int idx = 0; idx < queue->count; idx++)
-    printf("%s %d", idx ? " <-" : "", queue->_queue[idx]);
+    printf("%s %d", idx ? " ->" : "", queue->_queue[idx]);
 
   printf(" <- TAIL\n");
 }

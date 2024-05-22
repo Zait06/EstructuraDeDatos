@@ -22,7 +22,6 @@ void printFull(char** options, int* size, bool full) {
 
 int main() {
   Queue queue;
-  void (*ptrFunc)(char**, int*, bool) = &printFull;
 
   clear_output();
   printf("\n\tSimple Static Queue\n");
@@ -37,7 +36,7 @@ int main() {
   while (doit) {
     bool full = is_full(&queue);
     if (full) printf("The queue is full\n\n");
-    doit = action(&queue, menu(options, 6, full, ptrFunc));
+    doit = action(&queue, menu(options, 6, full, &printFull));
   }
 
   return 0;

@@ -5,12 +5,13 @@ project(DataStructureProject)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} -Werror)
 
-option(BUILD_STATIC_STACK "Build static stack" ON)
-option(BUILD_STATIC_QUEUE "Build static queue" ON)
+option(STATIC_STACK "Build static stack" OFF)
+option(DYNAMIC_STACK "Build dynamic stack" OFF)
 
-option(BUILD_DYNAMIC_STACK "Build dynamic stack" ON)
+option(STATIC_QUEUE "Build static queue" OFF)
+option(DYNAMIC_QUEUE "Build dynamic queue" OFF)
 
-if(BUILD_STATIC_STACK)
+if(STATIC_STACK)
     message(STATUS "Build static stack")
     set(
         SOURCES_FILES
@@ -19,21 +20,21 @@ if(BUILD_STATIC_STACK)
         src/utils/utils.c
     )
     add_executable(static_stack ${SOURCES_FILES})
-endif(BUILD_STATIC_STACK)
+endif(STATIC_STACK)
 
-if(BUILD_DYNAMIC_STACK)
+if(DYNAMIC_STACK)
     message(STATUS "Build dynamic stack")
     set(
         SOURCES_FILES
         src/Stack/dynamic/main.c 
         src/Stack/dynamic/stack.c 
-        src/utils/node/node.c
+        src/node/node.c
         src/utils/utils.c
     )
     add_executable(dynamic_stack ${SOURCES_FILES})
-endif(BUILD_DYNAMIC_STACK)
+endif(DYNAMIC_STACK)
 
-if(BUILD_STATIC_QUEUE)
+if(STATIC_QUEUE)
     message(STATUS "Build static queue")
     set(
         SOURCES_FILES
@@ -42,4 +43,16 @@ if(BUILD_STATIC_QUEUE)
         src/utils/utils.c
     )
     add_executable(static_queue ${SOURCES_FILES})
-endif(BUILD_STATIC_QUEUE)
+endif(STATIC_QUEUE)
+
+if(DYNAMIC_QUEUE)
+    message(STATUS "Build static queue")
+    set(
+        SOURCES_FILES
+        src/Queue/dynamic/main.c 
+        src/Queue/dynamic/queue.c 
+        src/node/node.c
+        src/utils/utils.c
+    )
+    add_executable(dynamic_queue ${SOURCES_FILES})
+endif(DYNAMIC_QUEUE)

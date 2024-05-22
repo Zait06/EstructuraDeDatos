@@ -21,9 +21,8 @@ void printFull(char** options, int* size, bool full) {
 
 int main() {
   Stack stack;
-  void (*ptrFunc)(char**, int*, bool) = &printFull;
 
-  printf("\n\Static Stack\n");
+  printf("\n\tStatic Stack\n");
 
   int size;
   printf("Input size stack: ");
@@ -35,7 +34,7 @@ int main() {
   while (doit) {
     bool full = is_full(&stack);
     if (full) printf("The stack is full\n\n");
-    doit = action(&stack, menu(options, 5, full, ptrFunc));
+    doit = action(&stack, menu(options, 5, full, &printFull));
   }
 
   destroy_stack(&stack);

@@ -18,13 +18,11 @@ Para saber el contenido de este repositorio, puede ver el [temario](/docs/README
 
 ## Ejecutar código C
 
-Dirigirse a la carpeta `src-c` y alojarse en la carpeta de alguna de las estructuras
-
 ```shell
 cd struct/path
 mkdir build
 cd build
-cmake ..
+cmake .. -DSTATIC_STACK -DDYNAMIC_QUEUE
 make
 ./project_name
 ```
@@ -47,5 +45,5 @@ Donde `[struct]` es el nombre de la esctructura y `[type]` si es `dynamic` o `st
 
 ```shell
 cd struct/path
-python main.py
+python __main__.py
 ```
