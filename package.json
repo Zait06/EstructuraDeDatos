@@ -8,9 +8,10 @@
   "type": "commonjs",
   "scripts": {
     "build_ts": "./node_modules/.bin/tsc",
-    "stack:static": "node ./build/Stack/static/",
-    "stack:dynamic": "node ./build/Stack/dynamic/",
-    "queue:static": "node ./build/Queue/static/"
+    "stack:static": "node ./build/typescript/Stack/static/",
+    "stack:dynamic": "node ./build/typescript/Stack/dynamic/",
+    "queue:static": "node ./build/typescript/Queue/static/",
+    "queue:dynamic": "node ./build/typescript/Queue/dynamic/"
   },
   "dependencies": {
     "readline": "^1.3.0",

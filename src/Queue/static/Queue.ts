@@ -1,8 +1,10 @@
-export default class Queue {
+import StructBase from "../../StructBase/StructBase";
+
+export default class Queue extends StructBase {
   private _queue: Array<number>;
-  private size: number;
 
   constructor(size: number) {
+    super();
     this._queue = new Array<number>();
     this.size = size;
   }

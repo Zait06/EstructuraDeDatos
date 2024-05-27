@@ -6,3 +6,4 @@ node_modules
 *build*/
 *.js
 __pycache__/
+.venv

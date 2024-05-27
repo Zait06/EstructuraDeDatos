@@ -3,7 +3,7 @@
 Node* create_node(int data) {
   Node* node = malloc(sizeof(Node));
   node->data = data;
-  node->next = NULL;
+  node->link = NULL;
   return node;
 }
 

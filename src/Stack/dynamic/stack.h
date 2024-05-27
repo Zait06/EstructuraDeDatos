@@ -1,5 +1,5 @@
 #include <stdbool.h>
-#include "../../node/node.h"
+#include "../../Node/node.h"
 #include "../../utils/utils.h"
 
 typedef struct Stack {

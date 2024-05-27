@@ -1,4 +1,4 @@
 export interface Node {
-    data: number;
-    next: Node | undefined;
+  data: number;
+  link: Node | undefined;
 }

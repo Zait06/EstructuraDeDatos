@@ -17,7 +17,7 @@ void enqueue(Queue* queue, Node* value) {
     return;
   }
 
-  queue->tail->next = value;
+  queue->tail->link = value;
   queue->tail = value;
   queue->count++;
 }
@@ -27,8 +27,8 @@ void dequeue(Queue* queue, Node* value) {
     return value = NULL;
 
   *value = *queue->head;
-  queue->head = queue->head->next;
-  value->next = NULL;
+  queue->head = queue->head->link;
+  value->link = NULL;
   queue->count--;
 }
 
@@ -37,12 +37,12 @@ void print_queue(Queue* queue) {
 
   printf("\nFRONT -> ");
 
-  while (aux->next != NULL) {
-    printf("%d -> ", aux->data);
-    aux = aux->next;
+  while (tmpNode->link != NULL) {
+    printf("%d -> ", tmpNode->data);
+    aux = tmpNode->link;
   }
 
-  printf("%d", aux->data);
+  printf("%d", tmpNode->data);
   printf(" <- TAIL\n");
 }
 

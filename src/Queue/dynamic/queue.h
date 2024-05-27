@@ -1,7 +1,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "../../Node/Node.h"
+#include "../../Node/node.h"
 
 typedef struct Queue {
   int count;

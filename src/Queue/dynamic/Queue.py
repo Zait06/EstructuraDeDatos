@@ -6,57 +6,60 @@ if prev.endswith("EstructuraDeDatos"):
 else:
     prev = "../.."
 
+sys.path.append(os.path.join(prev, "Node"))
 sys.path.append(os.path.join(prev, "StructBase"))
 
+from Node import Node
 from StructBase import StructBase
 
 
 class Queue(StructBase):
-    __queue = []
+    _head = None
+    _tail = None
 
-    def __init__(self, size: int) -> None:
+    def __init__(self) -> None:
         super()
-        self.__size = size
 
     def __del__(self) -> None:
-        self.__queue.clear()
+        self._head = None
+        self._tail = None
 
     def __str__(self) -> str:
         str_ = "\n\tHEAD -> "
-        str_ += " -> ".join([str(e) for e in self.__queue])
         str_ += " <- TAIL\n"
         return str_
 
     def is_empty(self) -> bool:
-        return len(self.__queue) == 0
+        return self._head == None and self._tail == None
 
     def is_full(self) -> bool:
-        return len(self.__queue) == self.__size
+        return False
 
-    def enqueue(self, value: int):
-        try:
-            if self.is_full():
-                raise Exception("Queue is full. Can't push more data")
-            self.__queue.append(value)
-        except Exception as exp:
-            msg = exp.args
-            print(f"Error: {msg[0]}")
+    def enqueue(self, value: Node):
+        if self.is_empty():
+            self._head = value
+            self._tail = value
+            return
+        value.link = self._tail
+        self._tail.link = value
 
-    def dequeue(self) -> int:
+    def dequeue(self) -> Node:
         try:
             if self.is_empty():
                 raise Exception("Queue is empty.")
-            return self.__queue.pop(0)
+            value = self._head
+            self._head = value.link
+            return value
         except Exception as exp:
             msg = exp.args
             print(f"Error: {msg[0]}")
 
-    def head(self) -> int:
+    def head(self) -> Node:
         if self.is_empty():
-            return -1
-        return self.__queue[0]
+            return None
+        return self._head
 
     def tail(self) -> int:
         if self.is_empty():
-            return -1
-        return self.__queue[-1]
+            return None
+        return self._tail

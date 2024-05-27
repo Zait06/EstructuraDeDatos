@@ -1,5 +1,19 @@
-class Stack:
+import os, sys
+
+prev = os.getcwd()
+if prev.endswith("EstructuraDeDatos"):
+    prev = os.path.join(prev, "src")
+else:
+    prev = "../.."
+
+sys.path.append(os.path.join(prev, "StructBase"))
+
+from StructBase import StructBase
+
+
+class Stack(StructBase):
     def __init__(self, size: int) -> None:
+        super()
         self._stack = []
         self.size = size
 

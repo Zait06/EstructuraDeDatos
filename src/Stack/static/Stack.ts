@@ -1,23 +1,25 @@
-export default class Stack {
+import StructBase from "../../StructBase/StructBase";
+
+export default class Stack extends StructBase {
   _stack: Array<number>;
-  size: number;
 
   constructor(size: number) {
+    super();
     this._stack = [];
     this.size = size;
   }
 
-  is_empty(): boolean {
+  isEmpty(): boolean {
     return !this._stack.length;
   }
 
-  is_full(): boolean {
+  isFull(): boolean {
     return this._stack.length === this.size;
   }
 
   push(value: number) {
     try {
-      if (this.is_full()) throw "Stack is full. Can't push more data.";
+      if (this.isFull()) throw "Stack is full. Can't push more data.";
       this._stack.push(value);
     } catch (err) {
       console.error(err);
@@ -26,7 +28,7 @@ export default class Stack {
 
   pop(): number | undefined {
     try {
-      if (this.is_empty()) throw "Stack is empty.";
+      if (this.isEmpty()) throw "Stack is empty.";
       return this._stack.pop();
     } catch (err: any) {
       console.error(err);
@@ -35,7 +37,7 @@ export default class Stack {
 
   peek(): number | undefined {
     try {
-      if (this.is_empty()) throw "Stack is empty. Please, push some value";
+      if (this.isEmpty()) throw "Stack is empty. Please, push some value";
       return this._stack[this._stack.length - 1];
     } catch (err: any) {
       console.error(err);

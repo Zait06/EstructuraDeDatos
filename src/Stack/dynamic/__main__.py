@@ -36,7 +36,6 @@ def action(stack: Stack, option: int) -> None:
 
 
 if __name__ == "__main__":
-    size = int(input("Input the stack size: "))
     stack = Stack()
     print("\n\tStatic Stack\n")
 
