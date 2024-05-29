@@ -8,7 +8,9 @@
     "queue.h": "c",
     "stdlib.h": "c",
     "node.h": "c",
-    "utils.h": "c"
+    "utils.h": "c",
+    "linkedlist.h": "c",
+    "stack.h": "c"
   },
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 2, ColumnLimit: 0, IncludeBlocks: Merge, IndentGotoLabels: true, KeepEmptyLinesAtTheStartOfBlocks: true}",
   "[markdown]": {

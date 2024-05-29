@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void clearOutput();
+void fix_index(int* index, int* size);
 int menu(char** options, int size, bool full, void (*ptr)(char**, int*, bool));
-void copy_options(char** src, char** output, int size);
-void clear_output();
+void copyOptions(char** src, char** output, int size);

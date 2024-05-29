@@ -6,5 +6,5 @@ typedef struct Node {
   struct Node* link;
 } Node;
 
-Node* create_node(int data);
-void print_node(Node* node);
+Node create_node(int data);
+Node* create_ptr_node(int data);

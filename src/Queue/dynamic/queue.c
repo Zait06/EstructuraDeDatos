@@ -1,91 +1,96 @@
 #include "queue.h"
 
-void init_queue(Queue* queue) {
-  queue->count = 0;
+void queue_init(Queue* queue) {
+  queue->size = 0;
   queue->head = NULL;
   queue->tail = NULL;
 }
 
-bool is_empty(Queue* queue) {
+bool queue_is_empty(Queue* queue) {
   return queue->head == NULL && queue->tail == NULL;
 }
 
-void enqueue(Queue* queue, Node* value) {
-  if (is_empty(queue)) {
-    queue->head = value;
-    queue->tail = value;
+void queue_enqueue(Queue* queue, Node value) {
+  Node* tmpNode = create_ptr_node(value.data);
+
+  if (queue_is_empty(queue)) {
+    queue->head = tmpNode;
+    queue->tail = tmpNode;
     return;
   }
 
-  queue->tail->link = value;
-  queue->tail = value;
-  queue->count++;
+  queue->tail->link = tmpNode;
+  queue->tail = tmpNode;
+  queue->size++;
 }
 
-void dequeue(Queue* queue, Node* value) {
-  if (is_empty(queue))
-    return value = NULL;
+Node queue_dequeue(Queue* queue) {
+  Node node = {NULL, NULL};
+  if (queue_is_empty(queue))
+    return node;
 
-  *value = *queue->head;
-  queue->head = queue->head->link;
-  value->link = NULL;
-  queue->count--;
+  Node* tmpNode = queue->head;
+  queue->head = tmpNode->link;
+  tmpNode->link = NULL;
+  node.data = tmpNode->data;
+  free(tmpNode);
+  queue->size--;
+
+  return node;
 }
 
-void print_queue(Queue* queue) {
-  Node* aux = queue->head;
-
-  printf("\nFRONT -> ");
-
-  while (tmpNode->link != NULL) {
-    printf("%d -> ", tmpNode->data);
-    aux = tmpNode->link;
+void queue_print(Queue* queue) {
+  Node* tmpNode = queue->head;
+  printf("\nFRONT");
+  while (tmpNode != NULL) {
+    printf(" -> %d", tmpNode->data);
+    tmpNode = tmpNode->link;
   }
-
-  printf("%d", tmpNode->data);
   printf(" <- TAIL\n");
 }
 
-void head(Queue* queue, Node* value) {
-  if (is_empty(queue))
-    return value = NULL;
-  *value = *queue->head;
+Node queue_head(Queue* queue) {
+  Node node = {NULL, NULL};
+  if (queue_is_empty(queue)) return node;
+  node.data = queue->head->data;
+  return node;
 }
 
-void tail(Queue* queue, Node* value) {
-  if (is_empty(queue))
-    return value = NULL;
-  *value = *queue->tail;
+Node queue_tail(Queue* queue) {
+  Node node = {NULL, NULL};
+  if (queue_is_empty(queue)) return node;
+  node.data = queue->tail->data;
+  return node;
 }
 
-bool action(Queue* queue, int option) {
-  clear_output();
+bool queue_action(Queue* queue, int option) {
+  clearOutput();
   Node node;
   switch (option) {
     int value;
     case 1:
       printf("Write a value: ");
       scanf("%d", &value);
-      enqueue(queue, create_node(value));
+      queue_enqueue(queue, create_node(value));
       printf("\n");
       return true;
     case 2:
-      dequeue(queue, &node);
-      if (&node != NULL)
+      node = queue_dequeue(queue);
+      if (node.data != NULL)
         printf("Dequeue: %d\n", node.data);
       return true;
     case 3:
-      head(queue, &node);
-      if (&node != NULL)
+      node = queue_head(queue);
+      if (node.data != NULL)
         printf("Head: %d\n", node.data);
       return true;
     case 4:
-      tail(queue, &node);
-      if (&node != NULL)
+      node = queue_tail(queue, &node);
+      if (node.data != NULL)
         printf("Tail: %d\n", node.data);
       return true;
     case 5:
-      print_queue(queue);
+      queue_print(queue);
       printf("\n");
       return true;
     case 6:
@@ -96,6 +101,8 @@ bool action(Queue* queue, int option) {
   }
 }
 
-void destroy_queue(Queue* queue) {
-  free(queue);
+void queue_destroy(Queue* queue) {
+  queue->size = 0;
+  free(queue->head);
+  free(queue->tail);
 }

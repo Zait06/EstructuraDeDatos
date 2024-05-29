@@ -14,12 +14,14 @@ char* options[] = {
 
 int main() {
   Queue queue;
-  init_queue(&queue);
+  queue_init(&queue);
 
-  clear_output();
+  clearOutput();
   printf("\n\tDynamic Queue\n");
 
-  while (action(&queue, menu(options, 6, false, NULL)));
+  while (queue_action(&queue, menu(options, 6, false, NULL)));
+
+  queue_destroy(&queue);
 
   return 0;
 }

@@ -9,8 +9,8 @@ typedef struct Queue {
 } Queue;
 
 void init_queue(Queue* queue, int size);
-bool is_empty(Queue* queue);
-bool is_full(Queue* queue);
+bool isEmpty(Queue* queue);
+bool isFull(Queue* queue);
 void enqueue(Queue* queue, int value);
 int dequeue(Queue* queue);
 void print_queue(Queue* queue);

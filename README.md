@@ -20,9 +20,9 @@ Para saber el contenido de este repositorio, puede ver el [temario](/docs/README
 
 ```shell
 cd struct/path
-mkdir build
-cd build
-cmake .. -DSTATIC_STACK -DDYNAMIC_QUEUE
+mkdir build/c
+cd build/c
+cmake .. -DSTATIC_STACK=ON -DDYNAMIC_QUEUE=ON
 make
 ./project_name
 ```

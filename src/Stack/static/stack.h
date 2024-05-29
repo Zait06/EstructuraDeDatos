@@ -9,12 +9,12 @@ typedef struct Stack {
   int maxSize;
 } Stack;
 
-void init_stack(Stack* stack, int size);
-bool is_empty(Stack* stack);
-bool is_full(Stack* stack);
-void push(Stack* stack, int value);
-int pop(Stack* stack);
-int peek(Stack* stack);
-void print_stack(Stack* stack);
+void stack_init(Stack* stack, int size);
+bool stack_is_empty(Stack* stack);
+bool isFull(Stack* stack);
+void stack_push(Stack* stack, int value);
+int stack_pop(Stack* stack);
+int stack_peek(Stack* stack);
+void stack_print(Stack* stack);
 void destroy_stack(Stack* stack);
-bool action(Stack* stack, int option);
+bool stack_action(Stack* stack, int option);

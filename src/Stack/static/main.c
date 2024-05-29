@@ -32,7 +32,7 @@ int main() {
 
   bool doit = true;
   while (doit) {
-    bool full = is_full(&stack);
+    bool full = isFull(&stack);
     if (full) printf("The stack is full\n\n");
     doit = action(&stack, menu(options, 5, full, &printFull));
   }

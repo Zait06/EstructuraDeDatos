@@ -6,17 +6,17 @@ void init_queue(Queue *queue, int size) {
   queue->size = size;
 }
 
-bool is_empty(Queue *queue) { return !queue->count; }
+bool isEmpty(Queue *queue) { return !queue->count; }
 
-bool is_full(Queue *queue) { return queue->count == queue->size; }
+bool isFull(Queue *queue) { return queue->count == queue->size; }
 
 void enqueue(Queue *queue, int value) {
-  if (is_full(queue)) return;
+  if (isFull(queue)) return;
   queue->_queue[queue->count++] = value;
 }
 
 int dequeue(Queue *queue) {
-  if (is_empty(queue)) return -1;
+  if (isEmpty(queue)) return -1;
 
   queue->count--;
   int node = queue->_queue[0];
@@ -35,21 +35,21 @@ void print_queue(Queue *queue) {
 }
 
 int head(Queue *queue) {
-  if (is_empty(queue)) return -1;
+  if (isEmpty(queue)) return -1;
   return queue->_queue[0];
 }
 
 int tail(Queue *queue) {
-  if (is_empty(queue)) return -1;
+  if (isEmpty(queue)) return -1;
   return queue->_queue[queue->count - 1];
 }
 
 bool action(Queue *queue, int option) {
-  clear_output();
+  clearOutput();
   switch (option) {
     int value;
     case 1:
-      if (is_full(queue)) return true;
+      if (isFull(queue)) return true;
       printf("Write a value: ");
       scanf("%d", &value);
       enqueue(queue, value);

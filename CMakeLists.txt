@@ -11,6 +11,8 @@ option(DYNAMIC_STACK "Build dynamic stack" OFF)
 option(STATIC_QUEUE "Build static queue" OFF)
 option(DYNAMIC_QUEUE "Build dynamic queue" OFF)
 
+option(LINKED_LIST "Build simple linked list" OFF)
+
 if(STATIC_STACK)
     message(STATUS "Build static stack")
     set(
@@ -56,3 +58,15 @@ if(DYNAMIC_QUEUE)
     )
     add_executable(dynamic_queue ${dynamic_queue_files})
 endif(DYNAMIC_QUEUE)
+
+if(LINKED_LIST)
+    message(STATUS "Build simple linked list")
+    set(
+        linked_list_files
+        src/LinkedList/SimpleLinkedList/main.c 
+        src/LinkedList/SimpleLinkedList/linkedlist.c 
+        src/node/node.c
+        src/utils/utils.c
+    )
+    add_executable(linked_list ${linked_list_files})
+endif(LINKED_LIST)

@@ -23,7 +23,7 @@ void printFull(char** options, int* size, bool full) {
 int main() {
   Queue queue;
 
-  clear_output();
+  clearOutput();
   printf("\n\tSimple Static Queue\n");
 
   int size;
@@ -34,7 +34,7 @@ int main() {
 
   bool doit = true;
   while (doit) {
-    bool full = is_full(&queue);
+    bool full = isFull(&queue);
     if (full) printf("The queue is full\n\n");
     doit = action(&queue, menu(options, 6, full, &printFull));
   }
