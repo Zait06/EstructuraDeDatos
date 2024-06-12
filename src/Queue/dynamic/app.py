@@ -1,23 +1,6 @@
-import os
-
-from Queue import Node, Queue
-
-options = [
-    "1. Enqueue",
-    "2. Dequeue",
-    "3. Show head",
-    "4. Show tail",
-    "5. Print queue",
-    "6. Exit",
-]
-
-
-def clear():
-    # for windows
-    if os.name == "nt":
-        _ = os.system("cls")
-    else:
-        _ = os.system("clear")
+from utils import clear, list_to_string_menu
+from Queue.dynamic import Queue
+from Node import Node
 
 
 def action(queue: Queue, option: int) -> None:
@@ -45,15 +28,20 @@ def action(queue: Queue, option: int) -> None:
         return True
 
 
-if __name__ == "__main__":
+def main():
+    clear()
     queue = Queue()
-    print("\n\tDynamic Queue\n")
+    print("\n\tDynamic Queue")
 
     run = True
     while run:
         print("\nChoose an option\n")
-        print("\n".join(options) + "\n")
+        print(list_to_string_menu(Queue.options()))
         option = int(input("Type an option: "))
         run = action(queue, option)
 
     del queue
+
+
+if __name__ == "__main__":
+    main()

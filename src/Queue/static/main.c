@@ -23,7 +23,7 @@ void printFull(char** options, int* size, bool full) {
 int main() {
   Queue queue;
 
-  clearOutput();
+  clear();
   printf("\n\tSimple Static Queue\n");
 
   int size;

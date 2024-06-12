@@ -4,14 +4,6 @@ import { stdin as input, stdout as output } from "node:process";
 
 var stack: Stack;
 
-const menu = [
-  "1.- Push",
-  "2.- Pop",
-  "3.- Show top",
-  "4.- Print stack",
-  "5.- Exit",
-];
-
 const rl = readline.createInterface({ input, output });
 
 const closeAll = () => {
@@ -48,8 +40,8 @@ const action = (option: number) => {
 
 const show_menu = () => {
   console.log("Choose an option: ");
-  menu.forEach((e) => {
-    console.log(`${e}`);
+  Stack.options.forEach((elem, idx) => {
+    console.log(`${idx + 1} ${elem}`);
   });
   rl.question("Type an option: ", (answer) => {
     action(parseInt(answer));

@@ -19,7 +19,7 @@ int main() {
   LinkedList list;
   linked_list_init(&list);
 
-  clearOutput();
+  clear();
   printf("\n\tLinked List\n");
 
   while (linked_list_action(&list, menu(options, 9, false, NULL)));

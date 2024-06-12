@@ -18,7 +18,7 @@ int main() {
   srand(time(NULL));
   stack_init(&stack);
 
-  clearOutput();
+  clear();
   printf("\n\tDynamic Stack\n");
 
   while (stack_action(&stack, menu(options, 5, false, NULL)));

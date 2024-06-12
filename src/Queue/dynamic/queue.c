@@ -64,7 +64,7 @@ Node queue_tail(Queue* queue) {
 }
 
 bool queue_action(Queue* queue, int option) {
-  clearOutput();
+  clear();
   Node node;
   switch (option) {
     int value;

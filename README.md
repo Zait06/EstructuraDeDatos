@@ -19,7 +19,6 @@ Para saber el contenido de este repositorio, puede ver el [temario](/docs/README
 ## Ejecutar código C
 
 ```shell
-cd struct/path
 mkdir build/c
 cd build/c
 cmake .. -DSTATIC_STACK=ON -DDYNAMIC_QUEUE=ON
@@ -32,7 +31,7 @@ make
 Para poder correr cualquier tipo de codigo, debemos instalar los paquetes del repositorio (se recomienda usar `yarn`). Basta con escribir la siguiente sentencia.
 
 ```shell
-# Build all projects
+# Build all mini-projects
 yarn run build_ts
 
 # Run some project
@@ -44,6 +43,9 @@ Donde `[struct]` es el nombre de la esctructura y `[type]` si es `dynamic` o `st
 ## Ejecutar código Python
 
 ```shell
-cd struct/path
-python __main__.py
+#Build all mini-projects
+pip install -e .
+
+# Run some project
+./struct-type.exe
 ```

@@ -1,22 +1,5 @@
-from Queue import Queue
-import os
-
-options = [
-    "1. Enqueue",
-    "2. Dequeue",
-    "3. Show head",
-    "4. Show tail",
-    "5. Print queue",
-    "6. Exit",
-]
-
-
-def clear():
-    # for windows
-    if os.name == "nt":
-        _ = os.system("cls")
-    else:
-        _ = os.system("clear")
+from utils import clear, list_to_string_menu
+from Queue.static import Queue
 
 
 def action(queue: Queue, option: int) -> None:
@@ -44,7 +27,8 @@ def action(queue: Queue, option: int) -> None:
         return True
 
 
-if __name__ == "__main__":
+def main():
+    clear()
     size = int(input("Input the queue size: "))
     queue = Queue(size)
     print("\n\tStatic Queue\n")
@@ -52,8 +36,15 @@ if __name__ == "__main__":
     run = True
     while run:
         print("\nChoose an option\n")
-        print("\n".join(options) + "\n")
+        offset = 1 if queue.is_full() else 0
+        if queue.is_full():
+            print("Queue is full")
+        print(list_to_string_menu(Queue.options()[offset:]))
         option = int(input("Type an option: "))
-        run = action(queue, option)
+        run = action(queue, option + offset)
 
     del queue
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,16 @@
+[project]
+name = "DataStructureProject"
+version = "0.0.1"
+description = "Data structurs with python using POO"
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+
+[project.scripts]
+stack-static = "Stack.static.app:main"
+stack-dynamic = "Stack.dynamic.app:main"
+queue-static = "Queue.static.app:main"
+queue-dynamic = "Queue.dynamic.app:main"

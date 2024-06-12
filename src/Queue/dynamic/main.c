@@ -16,7 +16,7 @@ int main() {
   Queue queue;
   queue_init(&queue);
 
-  clearOutput();
+  clear();
   printf("\n\tDynamic Queue\n");
 
   while (queue_action(&queue, menu(options, 6, false, NULL)));

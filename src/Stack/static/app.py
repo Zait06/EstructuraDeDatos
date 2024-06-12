@@ -1,22 +1,11 @@
-from Stack import Node, Stack
-import os
-
-options = ["1.- Push", "2.- Pop", "3.- Show top", "4.- Print stack", "5.- Exit"]
-
-
-def clear():
-    # for windows
-    if os.name == "nt":
-        os.system("cls")
-    else:
-        os.system("clear")
+from utils import clear, list_to_string_menu
+from Stack.static import Stack
 
 
 def action(stack: Stack, option: int) -> None:
     clear()
     if option == 1:
-        value_int = int(input("Write a value: "))
-        value = Node(value_int)
+        value = int(input("Write a value: "))
         stack.push(value)
         return True
     elif option == 2:
@@ -35,15 +24,20 @@ def action(stack: Stack, option: int) -> None:
         return True
 
 
-if __name__ == "__main__":
-    stack = Stack()
-    print("\n\tStatic Stack\n")
+def main():
+    clear()
+    size = int(input("Input the stack size: "))
+    stack = Stack(size)
+    print("\n\tStatic Stack")
 
     run = True
     while run:
         print("\nChoose an option\n")
-        print("\n".join(options) + "\n")
+        offset = 1 if stack.is_full() else 0
+        if stack.is_full():
+            print("Stack is full")
+        print(list_to_string_menu(Stack.options()[offset:]))
         option = int(input("Type an option: "))
-        run = action(stack, option)
+        run = action(stack, option + offset)
 
     del stack

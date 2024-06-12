@@ -48,7 +48,7 @@ void stack_print(Stack* stack) {
 
 bool stack_action(Stack* stack, int option) {
   int value;
-  clearOutput();
+  clear();
   printf("\n");
   switch (option) {
     case 1:

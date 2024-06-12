@@ -2,7 +2,9 @@ import StructBase from "../../StructBase/StructBase";
 import { Node } from "../../Node/Node";
 
 export default class Stack extends StructBase {
-  head: Node | undefined;
+  protected head: Node | undefined;
+
+  static options = ["Push", "Pop", "Show top", "Print stack", "Exit"];
 
   constructor() {
     super();

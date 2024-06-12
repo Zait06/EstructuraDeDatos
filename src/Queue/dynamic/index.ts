@@ -47,7 +47,7 @@ const action = (option: number) => {
   rl.question("Write a value: ", (answer) => {
     const node = {
       data: parseInt(answer),
-      next: undefined,
+      link: undefined,
     };
     queue.enqueue(node);
     showMenu();

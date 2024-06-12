@@ -42,7 +42,7 @@ void linked_list_insert(LinkedList* list, Node value, int index) {
   }
 
   fix_index(&index, &(list->size));
-  if (index != list->size - 1) index = index - 1;
+  if (index != list->size - 1) index -= 1;
 
   Node* prevNode = linked_list_at(list, index);
   tmpNode->link = prevNode->link;
@@ -122,7 +122,7 @@ void linked_list_print(LinkedList* list) {
 }
 
 bool linked_list_action(LinkedList* list, int option) {
-  clearOutput();
+  clear();
   Node node;
   switch (option) {
     int value;

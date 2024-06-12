@@ -3,7 +3,7 @@
 /**
  * @brief Clear output terminal
  */
-void clearOutput() {
+void clear() {
 #ifdef __unix__
   system("clear");
 #else
@@ -19,7 +19,7 @@ void clearOutput() {
 void fix_index(int* index, int* size) {
   if (*index > *size) *index = -1;
   if (0 > *index) *index = *size + *index;
-  if (*index > *size) *index = 0;
+  if (*index > *size || 0 > *index) *index = 0;
 }
 
 /**

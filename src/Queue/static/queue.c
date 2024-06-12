@@ -45,7 +45,7 @@ int tail(Queue *queue) {
 }
 
 bool action(Queue *queue, int option) {
-  clearOutput();
+  clear();
   switch (option) {
     int value;
     case 1:
