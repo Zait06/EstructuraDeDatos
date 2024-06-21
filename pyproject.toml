@@ -8,6 +8,8 @@ readme = "README.md"
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
+[tool.setuptools]
+package-dir = { "" = "code/python" }
 
 [project.scripts]
 stack-static = "Stack.static.app:main"

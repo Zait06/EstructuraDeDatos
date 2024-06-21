@@ -1,4 +1,6 @@
 build==1.2.1
 colorama==0.4.6
+-e git+ssh://git@github.com/Zait06/EstructuraDeDatos.git@0944b95de16701f405937b2d1bd283363392256f#egg=DataStructureProject
 packaging==24.0
 pyproject_hooks==1.1.0
+-e git+ssh://git@github.com/Zait06/EstructuraDeDatos.git@0944b95de16701f405937b2d1bd283363392256f#egg=spam_eggs

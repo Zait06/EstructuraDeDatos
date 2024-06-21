@@ -17,9 +17,9 @@ if(STATIC_STACK)
     message(STATUS "Build static stack")
     set(
         static_stack_files
-        src/Stack/static/main.c 
-        src/Stack/static/stack.c 
-        src/utils/utils.c
+        code/c/Stack/static/main.c 
+        code/c/Stack/static/stack.c 
+        code/c/utils/utils.c
     )
     add_executable(static_stack ${static_stack_files})
 endif(STATIC_STACK)
@@ -28,10 +28,10 @@ if(DYNAMIC_STACK)
     message(STATUS "Build dynamic stack")
     set(
         dynamic_stack_files
-        src/Stack/dynamic/main.c 
-        src/Stack/dynamic/stack.c 
-        src/node/node.c
-        src/utils/utils.c
+        code/c/Stack/dynamic/main.c 
+        code/c/Stack/dynamic/stack.c 
+        code/c/node/node.c
+        code/c/utils/utils.c
     )
     add_executable(dynamic_stack ${dynamic_stack_files})
 endif(DYNAMIC_STACK)
@@ -40,9 +40,9 @@ if(STATIC_QUEUE)
     message(STATUS "Build static queue")
     set(
         static_queue_files
-        src/Queue/static/main.c 
-        src/Queue/static/queue.c 
-        src/utils/utils.c
+        code/c/Queue/static/main.c 
+        code/c/Queue/static/queue.c 
+        code/c/utils/utils.c
     )
     add_executable(static_queue ${static_queue_files})
 endif(STATIC_QUEUE)
@@ -51,10 +51,10 @@ if(DYNAMIC_QUEUE)
     message(STATUS "Build static queue")
     set(
         dynamic_queue_files
-        src/Queue/dynamic/main.c 
-        src/Queue/dynamic/queue.c 
-        src/node/node.c
-        src/utils/utils.c
+        code/c/Queue/dynamic/main.c 
+        code/c/Queue/dynamic/queue.c 
+        code/c/node/node.c
+        code/c/utils/utils.c
     )
     add_executable(dynamic_queue ${dynamic_queue_files})
 endif(DYNAMIC_QUEUE)
@@ -63,10 +63,10 @@ if(LINKED_LIST)
     message(STATUS "Build simple linked list")
     set(
         linked_list_files
-        src/LinkedList/SimpleLinkedList/main.c 
-        src/LinkedList/SimpleLinkedList/linkedlist.c 
-        src/node/node.c
-        src/utils/utils.c
+        code/c/LinkedList/SimpleLinkedList/main.c 
+        code/c/LinkedList/SimpleLinkedList/linkedlist.c 
+        code/c/node/node.c
+        code/c/utils/utils.c
     )
     add_executable(linked_list ${linked_list_files})
 endif(LINKED_LIST)
