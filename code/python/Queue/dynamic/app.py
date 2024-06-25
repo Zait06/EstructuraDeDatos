@@ -1,6 +1,7 @@
-from utils import clear, list_to_string_menu
 from Queue.dynamic import Queue
 from Node import Node
+
+from utils import clear, list_to_string_menu
 
 
 def action(queue: Queue, option: int) -> None:

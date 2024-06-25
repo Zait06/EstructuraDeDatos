@@ -9,6 +9,22 @@ class StructBase(ABC):
     _tmpNode: Node = None
 
     @abstractmethod
+    def __str__(self) -> str:
+        return super().__str__()
+
+    @abstractmethod
+    def __next__(self) -> any:
+        pass
+
+    @abstractmethod
+    def __iter__(self) -> any:
+        pass
+
+    @abstractmethod
+    def __len__(self) -> int:
+        pass
+
+    @abstractmethod
     def is_empty(self) -> bool:
         """Return if the struct is empty
 
@@ -24,20 +40,4 @@ class StructBase(ABC):
         Returns:
             bool: is full the struct
         """
-        pass
-
-    @abstractmethod
-    def __str__(self) -> str:
-        return super().__str__()
-
-    @abstractmethod
-    def __next__(self) -> any:
-        pass
-
-    @abstractmethod
-    def __iter__(self) -> any:
-        pass
-
-    @abstractmethod
-    def __len__(self) -> int:
         pass

@@ -1,7 +1,8 @@
 from StructBase import StructBase
+from Queue.interface import QueueInterface
 
 
-class Queue(StructBase):
+class Queue(StructBase, QueueInterface):
     __items = []
 
     def __init__(self, size: int) -> None:
@@ -23,7 +24,7 @@ class Queue(StructBase):
 
     def __next__(self) -> int:
         if self._index < self.__len__():
-            index = self.__len__() - self._index - 1
+            index = self._index
             self._index += 1
             return self.__items[index]
         raise StopIteration
