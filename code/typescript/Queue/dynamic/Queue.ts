@@ -1,12 +1,23 @@
-import StructBase from "../../StructBase/StructBase";
 import { Node } from "../../Node/Node";
+import StructBase from "../../StructBase/StructBase";
+import QueueInterface from "../interface/QueueInterface";
 
-export default class Queue extends StructBase {
+export default class Queue extends StructBase implements QueueInterface {
   private _head: Node | undefined;
   private _tail: Node | undefined;
 
   constructor() {
     super();
+  }
+
+  *[Symbol.iterator]() {
+    let tmpNode = this._head;
+    let auxNode = this._head;
+    while (tmpNode !== undefined) {
+      auxNode = tmpNode;
+      tmpNode = tmpNode.link;
+      yield auxNode;
+    }
   }
 
   isEmpty(): boolean {
@@ -57,10 +68,7 @@ export default class Queue extends StructBase {
   toString(): string {
     let str: string = "\nFRONT -> ";
     let aux: Node | undefined = this._head;
-    while (!aux?.link) {
-      str += `${aux?.data} -> `;
-      aux = aux?.link;
-    }
+    str += [...this].map((elem) => elem.data).join(" -> ");
     str += `${aux?.data} <- TAIL\n`;
     return str;
   }

@@ -1,6 +1,7 @@
 import StructBase from "../../StructBase/StructBase";
+import QueueInterface from "../interface/QueueInterface";
 
-export default class Queue extends StructBase {
+export default class Queue extends StructBase implements QueueInterface {
   private _queue: Array<number>;
 
   constructor(size: number) {

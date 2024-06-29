@@ -12,6 +12,16 @@ export default class Stack extends StructBase implements StackInterface {
     this.head = undefined;
   }
 
+  *[Symbol.iterator]() {
+    let tmpNode = this.head;
+    let auxNode = this.head;
+    while (tmpNode !== undefined) {
+      auxNode = tmpNode;
+      tmpNode = tmpNode.link;
+      yield auxNode;
+    }
+  }
+
   isEmpty() {
     return !this.head;
   }
@@ -49,12 +59,8 @@ export default class Stack extends StructBase implements StackInterface {
 
   toString(): string {
     let str = "\tHEAD -> ";
-    let aux_node = this.head;
-    while (aux_node !== undefined) {
-      str += `${aux_node.data} -> `;
-      aux_node = aux_node.link;
-    }
-    str += "NULL\n";
+    str += [...this].map((elem) => elem.data).join(" -> ");
+    str += this.isEmpty() ? "NULL\n" : " -> NULL\n";
     return str;
   }
 }

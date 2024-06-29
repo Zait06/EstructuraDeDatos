@@ -13,6 +13,10 @@ export default class Stack extends StructBase implements StackInterface {
     this.size = size;
   }
 
+  *[Symbol.iterator]() {
+    for (let item of this.items) yield item;
+  }
+
   isEmpty(): boolean {
     return !this.items.length;
   }
