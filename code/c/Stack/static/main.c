@@ -1,6 +1,6 @@
 #include <stdbool.h>
 #include <stdio.h>
-#include <stdlib.h>
+// #include <stdlib.h>
 #include "../../utils/utils.h"
 #include "stack.h"
 
@@ -28,16 +28,16 @@ int main() {
   printf("Input size stack: ");
   scanf("%d", &size);
 
-  init_stack(&stack, size);
+  stack_init(&stack, size);
 
   bool doit = true;
   while (doit) {
-    bool full = isFull(&stack);
+    bool full = stack_is_full(&stack);
     if (full) printf("The stack is full\n\n");
-    doit = action(&stack, menu(options, 5, full, &printFull));
+    doit = stack_action(&stack, menu(options, 5, full, &printFull));
   }
 
-  destroy_stack(&stack);
+  stack_destroy(&stack);
 
   return 0;
 }

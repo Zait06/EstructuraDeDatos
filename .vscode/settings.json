@@ -29,6 +29,6 @@
   },
   "editor.formatOnSave": true,
   "cmake.configureOnOpen": false,
-  "python.analysis.extraPaths": ["./src"],
-  "cmake.sourceDirectory": "${workspaceFolder}/src"
+  "python.analysis.extraPaths": ["./code/python"],
+  "cmake.sourceDirectory": "${workspaceFolder}/code/c"
 }

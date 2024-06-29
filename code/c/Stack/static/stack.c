@@ -8,10 +8,10 @@ void stack_init(Stack* stack, int size) {
 
 bool stack_is_empty(Stack* stack) { return !stack->count; }
 
-bool isFull(Stack* stack) { return stack->count == stack->maxSize; }
+bool stack_is_full(Stack* stack) { return stack->count == stack->maxSize; }
 
 void stack_push(Stack* stack, int value) {
-  if (isFull(stack)) return;
+  if (stack_is_full(stack)) return;
   stack->_stack[stack->count] = value;
   stack->count++;
 }
@@ -41,7 +41,7 @@ bool stack_action(Stack* stack, int option) {
   printf("\n");
   switch (option) {
     case 1:
-      if (isFull(stack)) return true;
+      if (stack_is_full(stack)) return true;
       printf("Write a value: ");
       scanf("%d", &value);
       stack_push(stack, value);
@@ -65,6 +65,6 @@ bool stack_action(Stack* stack, int option) {
   }
 }
 
-void destroy_stack(Stack* stack) {
+void stack_destroy(Stack* stack) {
   free(stack->_stack);
 }

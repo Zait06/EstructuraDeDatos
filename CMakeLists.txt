@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.20)
 
 project(DataStructureProject)
 
@@ -17,8 +17,8 @@ if(STATIC_STACK)
     message(STATUS "Build static stack")
     set(
         static_stack_files
-        code/c/Stack/static/main.c 
-        code/c/Stack/static/stack.c 
+        code/c/Stack/static/main.c
+        code/c/Stack/static/stack.c
         code/c/utils/utils.c
     )
     add_executable(static_stack ${static_stack_files})
@@ -28,8 +28,8 @@ if(DYNAMIC_STACK)
     message(STATUS "Build dynamic stack")
     set(
         dynamic_stack_files
-        code/c/Stack/dynamic/main.c 
-        code/c/Stack/dynamic/stack.c 
+        code/c/Stack/dynamic/main.c
+        code/c/Stack/dynamic/stack.c
         code/c/node/node.c
         code/c/utils/utils.c
     )
@@ -40,8 +40,8 @@ if(STATIC_QUEUE)
     message(STATUS "Build static queue")
     set(
         static_queue_files
-        code/c/Queue/static/main.c 
-        code/c/Queue/static/queue.c 
+        code/c/Queue/static/main.c
+        code/c/Queue/static/queue.c
         code/c/utils/utils.c
     )
     add_executable(static_queue ${static_queue_files})
@@ -51,8 +51,8 @@ if(DYNAMIC_QUEUE)
     message(STATUS "Build static queue")
     set(
         dynamic_queue_files
-        code/c/Queue/dynamic/main.c 
-        code/c/Queue/dynamic/queue.c 
+        code/c/Queue/dynamic/main.c
+        code/c/Queue/dynamic/queue.c
         code/c/node/node.c
         code/c/utils/utils.c
     )
@@ -63,8 +63,8 @@ if(LINKED_LIST)
     message(STATUS "Build simple linked list")
     set(
         linked_list_files
-        code/c/LinkedList/SimpleLinkedList/main.c 
-        code/c/LinkedList/SimpleLinkedList/linkedlist.c 
+        code/c/LinkedList/SimpleLinkedList/main.c
+        code/c/LinkedList/SimpleLinkedList/linkedlist.c
         code/c/node/node.c
         code/c/utils/utils.c
     )
