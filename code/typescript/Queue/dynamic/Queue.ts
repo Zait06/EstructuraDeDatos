@@ -67,9 +67,8 @@ export default class Queue extends StructBase implements QueueInterface {
 
   toString(): string {
     let str: string = "\nFRONT -> ";
-    let aux: Node | undefined = this._head;
     str += [...this].map((elem) => elem.data).join(" -> ");
-    str += `${aux?.data} <- TAIL\n`;
+    str += ` <- TAIL\n`;
     return str;
   }
 }

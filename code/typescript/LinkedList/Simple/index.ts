@@ -88,6 +88,6 @@ const showMenu = () => {
   });
 };
 
-console.log("\tDynamic LinkedList\n");
+console.log("\tSimple LinkedList\n");
 linkedList = new LinkedList();
 showMenu();

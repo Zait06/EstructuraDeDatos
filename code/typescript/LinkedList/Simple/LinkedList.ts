@@ -1,12 +1,26 @@
-import StructBase from "../../StructBase/StructBase";
 import { Node } from "../../Node/Node";
 import { fixIndex } from "../../utils/utils";
+import StructBase from "../../StructBase/StructBase";
+import LinkedListInterface from "../interface/LinkedListInterface";
 
-export default class LinkedList extends StructBase {
+export default class LinkedList
+  extends StructBase
+  implements LinkedListInterface
+{
   private _top: Node | undefined;
 
   constructor() {
     super();
+  }
+
+  *[Symbol.iterator]() {
+    let tmpNode = this._top;
+    let auxNode = this._top;
+    while (tmpNode !== undefined) {
+      auxNode = tmpNode;
+      tmpNode = tmpNode.link;
+      yield auxNode;
+    }
   }
 
   isEmpty(): boolean {
@@ -20,12 +34,8 @@ export default class LinkedList extends StructBase {
   toString(): string {
     let str = "Top -> ";
     if (this.isEmpty()) return str;
-    let tmpNode = this._top;
-    while (tmpNode) {
-      str += `${tmpNode.data} -> `;
-      tmpNode = tmpNode.link;
-    }
-    str += `NULL`;
+    str += [...this].map((elem) => elem.data).join(" -> ");
+    str += this.isEmpty() ? "NULL" : " -> NULL";
     return str;
   }
 
@@ -34,9 +44,16 @@ export default class LinkedList extends StructBase {
 
     index = fixIndex(index, this.size);
 
-    let tmpNode = this._top;
-    for (let idx = 0; idx < index; idx++) tmpNode = tmpNode?.link;
-    return tmpNode;
+    let idx = 0;
+    let auxNode = this._top;
+    for (let tmpNode of this) {
+      if (idx === index) {
+        auxNode = tmpNode;
+        break;
+      }
+      idx++;
+    }
+    return auxNode;
   }
 
   insert(value: Node, index: number = 0) {
