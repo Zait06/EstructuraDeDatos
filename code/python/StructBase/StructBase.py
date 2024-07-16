@@ -1,3 +1,4 @@
+import typing
 from abc import ABC, abstractmethod
 
 from Node import Node
@@ -6,18 +7,18 @@ from Node import Node
 class StructBase(ABC):
     size: int = 0
     _index: int = 0
-    _tmpNode: Node = None
+    _tmpNode: Node | None = None
 
     @abstractmethod
     def __str__(self) -> str:
         return super().__str__()
 
     @abstractmethod
-    def __next__(self) -> any:
+    def __next__(self) -> typing.Any:
         pass
 
     @abstractmethod
-    def __iter__(self) -> any:
+    def __iter__(self) -> typing.Any:
         pass
 
     @abstractmethod

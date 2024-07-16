@@ -1,3 +1,6 @@
+from typing import Union
+
+from Node import Node
 from StructBase import StructBase
 from Stack.interface import StackInterface
 
@@ -5,7 +8,7 @@ from Stack.interface import StackInterface
 class Stack(StructBase, StackInterface):
     def __init__(self, size: int) -> None:
         super()
-        self.__items = []
+        self.__items: list[int] = []
         self.size = size
 
     def __del__(self) -> None:
@@ -37,30 +40,32 @@ class Stack(StructBase, StackInterface):
     def is_full(self) -> bool:
         return len(self.__items) == self.size
 
-    def push(self, value: int) -> None:
+    def push(self, value: Union[int, Node]) -> None:
         try:
             if self.is_full():
                 raise Exception("Stack is full. Can't push more data")
+            if isinstance(value, Node):
+                value = value.data
             self.__items.append(value)
         except Exception as exp:
             msg = exp.args
             print(f"Error: {msg[0]}")
 
-    def pop(self) -> int:
+    def pop(self) -> Union[int, Node]:
         try:
             if self.is_empty():
                 raise Exception("Stack is empty.")
             return self.__items.pop()
         except Exception as exp:
-            print(exp[0])
+            print(exp)
 
-    def peek(self) -> int:
+    def peek(self) -> Union[int, Node]:
         try:
             if self.is_empty():
                 raise Exception("Stack is empty.")
             return self.__items[-1]
         except Exception as exp:
-            print(exp[0])
+            print(exp)
 
     @staticmethod
     def options() -> list[str]:

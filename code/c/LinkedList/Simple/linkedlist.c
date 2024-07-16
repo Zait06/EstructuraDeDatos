@@ -1,4 +1,5 @@
 #include "linkedlist.h"
+#include "../../utils/utils.h"
 
 void linked_list_init(LinkedList* list) {
   list->size = 0;

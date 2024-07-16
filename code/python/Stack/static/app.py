@@ -2,7 +2,7 @@ from utils import clear, list_to_string_menu
 from Stack.static import Stack
 
 
-def action(stack: Stack, option: int) -> None:
+def action(stack: Stack, option: int) -> bool:
     clear()
     if option == 1:
         value = int(input("Write a value: "))

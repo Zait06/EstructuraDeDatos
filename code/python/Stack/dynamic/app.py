@@ -3,7 +3,7 @@ from Stack.dynamic import Stack
 from Node import Node
 
 
-def action(stack: Stack, option: int) -> None:
+def action(stack: Stack, option: int) -> bool:
     clear()
     if option == 1:
         value = int(input("Write a value: "))
