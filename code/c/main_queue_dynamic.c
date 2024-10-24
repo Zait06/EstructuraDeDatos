@@ -1,7 +1,7 @@
 #include <stdbool.h>
 #include <stdio.h>
-#include "../../utils/utils.h"
-#include "queue.h"
+#include "Queue/dynamic/queue.h"
+#include "utils/utils.h"
 
 char* options[] = {
     "1. Enqueue",

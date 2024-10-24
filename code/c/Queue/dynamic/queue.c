@@ -43,7 +43,7 @@ void queue_print(Queue* queue) {
   Node* tmpNode = queue->head;
   printf("\nFRONT");
   while (tmpNode != NULL) {
-    printf(" -> %d", tmpNode->data);
+    printf(" -> %s", node_to_string(tmpNode));
     tmpNode = tmpNode->link;
   }
   printf(" <- TAIL\n");

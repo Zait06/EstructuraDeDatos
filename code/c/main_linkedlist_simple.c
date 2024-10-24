@@ -1,7 +1,7 @@
 #include <stdbool.h>
 #include <stdio.h>
-#include "../../utils/utils.h"
-#include "linkedlist.h"
+#include "LinkedList/simple/linkedlist.h"
+#include "utils/utils.h"
 
 char* options[] = {
     "1. Push",
