@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct Node {
   int data;
   struct Node* link;
@@ -20,3 +24,7 @@ DoubleLinkNode* create_ptr_double_link_node(int data);
 
 char* node_to_string(Node* node);
 char* double_link_node_to_string(DoubleLinkNode* node);
+
+#ifdef __cplusplus
+}
+#endif

@@ -16,14 +16,11 @@ char* options[] = {
 
 int main() {
   LinkedList list;
-  linked_list_init(&list);
 
   clear();
-  printf("\n\tLinked List\n");
+  std::cout << "\n\tLinked List" << std::endl;
 
-  while (linked_list_action(&list, menu(options, 9, false, NULL)));
-
-  linked_list_destroy(&list);
+  while (list.menuAction(menu(options, 9, false, NULL)));
 
   return 0;
 }

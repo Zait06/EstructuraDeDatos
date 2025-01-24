@@ -1,30 +1,21 @@
-#include <stdbool.h>
-#include <stdio.h>
-#include <stdlib.h>
+#ifndef _DOUBLELINKEDLIST_H_
+#define _DOUBLELINKEDLIST_H_
+
 #include "../../Node/node.h"
+#include "../abstractlinkedlist.h"
 
-typedef struct DoubleLinkedList {
-  int size;
-  DoubleLinkNode* top;
-} DoubleLinkedList;
+class DoubleLinkedList : public AbstractLinkedList<DoubleLinkNode> {
+ public:
+  DoubleLinkedList();
+  ~DoubleLinkedList();
 
-// struct
-void linked_list_init(DoubleLinkedList* list);
-bool linked_list_is_empty(DoubleLinkedList* list);
-void linked_list_destroy(DoubleLinkedList* list);
+  DoubleLinkNode* at(int index) override;
+  void insert(DoubleLinkNode node, int index) override;
+  DoubleLinkNode remove_at(int index) override;
 
-// get
-DoubleLinkNode* linked_list_at(DoubleLinkedList* list, int index);
+  void print() override;
+  DoubleLinkNode* operator[](int idx);
+  friend std::ostream& operator<<(std::ostream& os, DoubleLinkedList& list);
+};
 
-// add
-void linked_list_insert(DoubleLinkedList* list, DoubleLinkNode value, int index);
-void linked_list_push(DoubleLinkedList* list, DoubleLinkNode value);
-void linked_list_append(DoubleLinkedList* list, DoubleLinkNode value);
-
-// remove
-DoubleLinkNode linked_list_remove_at(DoubleLinkedList* list, int index);
-DoubleLinkNode linked_list_remove_first(DoubleLinkedList* list);
-DoubleLinkNode linked_list_remove_last(DoubleLinkedList* list);
-
-void linked_list_print(DoubleLinkedList* list);
-bool linked_list_action(DoubleLinkedList* list, int option);
+#endif  // _DOUBLELINKEDLIST_H_

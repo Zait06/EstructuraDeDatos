@@ -15,11 +15,12 @@ void clear() {
  * @brief Fix the index with the size given
  * @param index The position of element
  * @param size The number of elements in the struct
+ * @return If fix index correct return true. Otherwise, false
  */
-void fix_index(int* index, int* size) {
-  if (*index > *size) *index = -1;
+bool fix_index(int* index, int* size) {
   if (0 > *index) *index = *size + *index;
-  if (*index > *size || 0 > *index) *index = 0;
+  if (*index > *size || 0 > *index) return false;
+  return true;
 }
 
 /**

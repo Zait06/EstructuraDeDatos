@@ -12,6 +12,7 @@ option(STATIC_QUEUE "Build static queue" OFF)
 option(DYNAMIC_QUEUE "Build dynamic queue" OFF)
 
 option(LINKED_LIST "Build simple linked list" OFF)
+# option(DOUBLE_LINKED_LIST "Build double linked list" OFF)
 
 if(STATIC_STACK)
     message(STATUS "Build static stack")
@@ -63,10 +64,22 @@ if(LINKED_LIST)
     message(STATUS "Build simple linked list")
     set(
         linked_list_files
-        code/c/main_linkedlist_simple.c
-        code/c/LinkedList/SimpleLinkedList/linkedlist.c
+        code/c/main_linkedlist.cpp
+        code/c/LinkedList/simple/linkedlist.cpp
         code/c/node/node.c
         code/c/utils/utils.c
     )
     add_executable(linked_list ${linked_list_files})
 endif(LINKED_LIST)
+
+# if(DOUBLE_LINKED_LIST)
+#     message(STATUS "Build double linked list")
+#     set(
+#         linked_list_files
+#         code/c/main_doublelinkedlist.c
+#         code/c/LinkedList/double/doublelinkedlist.c
+#         code/c/node/node.c
+#         code/c/utils/utils.c
+#     )
+#     add_executable(linked_list ${linked_list_files})
+# endif(DOUBLE_LINKED_LIST)
