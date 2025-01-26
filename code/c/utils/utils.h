@@ -6,7 +6,7 @@
 extern "C" {
 #endif
 
-void clear();
+void clean();
 bool fix_index(int* index, int* size);
 int menu(char** options, int size, bool full, void (*ptr)(char**, int*, bool));
 void copyOptions(char** src, char** output, int size);

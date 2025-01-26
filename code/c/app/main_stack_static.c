@@ -1,7 +1,7 @@
 #include <stdbool.h>
 #include <stdio.h>
-#include "Stack/static/stack.h"
-#include "utils/utils.h"
+#include "stack/static.h"
+#include "utils.h"
 
 char* options[] = {
     "1.- Push",
@@ -27,16 +27,16 @@ int main() {
   printf("Input size stack: ");
   scanf("%d", &size);
 
-  stack_init(&stack, size);
+  sstack_init(&stack, size);
 
   bool doit = true;
   while (doit) {
-    bool full = stack_is_full(&stack);
+    bool full = sstack_is_full(&stack);
     if (full) printf("The stack is full\n\n");
-    doit = stack_action(&stack, menu(options, 5, full, &printFull));
+    doit = sstack_action(&stack, menu(options, 5, full, &printFull));
   }
 
-  stack_destroy(&stack);
+  sstack_destroy(&stack);
 
   return 0;
 }

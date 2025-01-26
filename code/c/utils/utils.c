@@ -3,7 +3,7 @@
 /**
  * @brief Clear output terminal
  */
-void clear() {
+void clean() {
 #ifdef __unix__
   system("clear");
 #else

@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "Stack/dynamic/stack.h"
-#include "utils/utils.h"
+#include "stack/dynamic.h"
+#include "utils.h"
 
 char* options[] = {
     "1.- Push",
@@ -16,14 +16,14 @@ int main() {
   Stack stack;
 
   srand(time(NULL));
-  stack_init(&stack);
+  dstack_init(&stack);
 
-  clear();
+  clean();
   printf("\n\tDynamic Stack\n");
 
-  while (stack_action(&stack, menu(options, 5, false, NULL)));
+  while (dstack_action(&stack, menu(options, 5, false, NULL)));
 
-  stack_destroy(&stack);
+  dstack_destroy(&stack);
 
   return 0;
 }
