@@ -26,13 +26,21 @@ DoubleLinkNode* create_ptr_double_link_node(int data) {
 }
 
 char* node_to_string(Node* node) {
-  char text[200];
-  sprintf(text, "%4d", node->data);
-  return text;
+  char* str = malloc(100 * sizeof(char));
+  if (str == NULL) {
+      fprintf(stderr, "Memory allocation failed\n");
+      return NULL;
+  }
+  snprintf(str, 100, "%4d", node->data);
+  return str;
 }
 
 char* double_link_node_to_string(DoubleLinkNode* node) {
-  char text[200];
-  sprintf(text, "%4d", node->data);
-  return text;
+  char* str = malloc(100 * sizeof(char));
+  if (str == NULL) {
+      fprintf(stderr, "Memory allocation failed\n");
+      return NULL;
+  }
+  snprintf(str, 100, "%4d", node->data);
+  return str;
 }

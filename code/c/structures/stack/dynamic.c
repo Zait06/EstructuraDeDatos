@@ -40,7 +40,7 @@ void dstack_print(Stack* stack) {
   Node* tmpNode = stack->head;
   printf("\tHEAD -> ");
   while (tmpNode != NULL) {
-    printf("%s -> ", node_to_string(&(*tmpNode)));
+    printf("%s -> ", node_to_string(tmpNode));
     tmpNode = tmpNode->link;
   }
   printf("NULL\n");
