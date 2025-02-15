@@ -2,16 +2,17 @@
 
 ## Requisitos
 - CMake
+- Ninja
 
 ## Preparacion del proyecto
 
 ```sh
 mkdir build
 cd buld
-cmake ..
+cmake .. -GNinja
 ```
 
 ## Compilacion del ejecutable
 ```sh
-cmakd --build .
+cmake --build .
 ```

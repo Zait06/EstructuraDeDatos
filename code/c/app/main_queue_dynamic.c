@@ -1,7 +1,7 @@
 #include <stdbool.h>
 #include <stdio.h>
-#include "Queue/dynamic/queue.h"
-#include "utils/utils.h"
+#include "queue/dynamic.h"
+#include "utils.h"
 
 char* options[] = {
     "1. Enqueue",
@@ -13,14 +13,14 @@ char* options[] = {
 
 int main() {
   Queue queue;
-  queue_init(&queue);
+  dqueue_init(&queue);
 
-  clear();
+  clean();
   printf("\n\tDynamic Queue\n");
 
-  while (queue_action(&queue, menu(options, 6, false, NULL)));
+  while (dqueue_action(&queue, menu(options, 6, false, NULL)));
 
-  queue_destroy(&queue);
+  dqueue_destroy(&queue);
 
   return 0;
 }

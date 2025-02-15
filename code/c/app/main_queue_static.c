@@ -1,7 +1,7 @@
 #include <stdbool.h>
 #include <stdio.h>
-#include "Queue/static/queue.h"
-#include "utils/utils.h"
+#include "queue/static.h"
+#include "utils.h"
 
 char* options[] = {
     "1. Enqueue",
@@ -22,20 +22,20 @@ void printFull(char** options, int* size, bool full) {
 int main() {
   Queue queue;
 
-  clear();
+  clean();
   printf("\n\tSimple Static Queue\n");
 
   int size;
   printf("Input size queue: ");
   scanf("%d", &size);
 
-  init_queue(&queue, size);
+  squeue_init(&queue, size);
 
   bool doit = true;
   while (doit) {
-    bool full = isFull(&queue);
+    bool full = squeue_is_full(&queue);
     if (full) printf("The queue is full\n\n");
-    doit = action(&queue, menu(options, 6, full, &printFull));
+    doit = squeue_action(&queue, menu(options, 6, full, &printFull));
   }
 
   return 0;
