@@ -14,55 +14,15 @@ if(DYNAMIC_STACK)
 endif(DYNAMIC_STACK)
 
 if(STATIC_QUEUE)
-  message(STATUS "Build queue stack")
+  message(STATUS "Build static queue")
   add_executable(squeue_exe main_queue_static.c)
   target_link_libraries(squeue_exe utils ${STATIC_QUEUE_LIB})
 endif(STATIC_QUEUE)
 
 if(DYNAMIC_QUEUE)
-    message(STATUS "Build dynamic stack")
+    message(STATUS "Build dynamic queue")
     add_executable(dqueue_exe main_queue_dynamic.c)
     target_link_libraries(dqueue_exe utils node ${DYNAMIC_QUEUE_LIB})
 endif(DYNAMIC_QUEUE)
-
-
-# if(STATIC_QUEUE)
-#     message(STATUS "Build static queue")
-#     set(
-#         static_queue_files
-#         main_queue_static.c
-#     )
-#     add_executable(static_queue ${static_queue_files})
-# endif(STATIC_QUEUE)
-#
-# if(DYNAMIC_QUEUE)
-#     message(STATUS "Build dynamic queue")
-#     set(
-#         dynamic_queue_files
-#         main_queue_dynamic.c
-#     )
-#     add_executable(dynamic_queue ${dynamic_queue_files})
-# endif(DYNAMIC_QUEUE)
-#
-# if(LINKED_LIST)
-#     message(STATUS "Build simple linked list")
-#     set(
-#         linked_list_files
-#         main_linkedlist.cpp
-#     )
-#     add_executable(linked_list ${linked_list_files})
-# endif(LINKED_LIST)
-
-# if(DOUBLE_LINKED_LIST)
-#     message(STATUS "Build double linked list")
-#     set(
-#         linked_list_files
-#         main_doublelinkedlist.c
-#         LinkedList/double/doublelinkedlist.c
-#         node/node.c
-#         utils/utils.c
-#     )
-#     add_executable(linked_list ${linked_list_files})
-# endif(DOUBLE_LINKED_LIST)
 
 include_directories(${CMAKE_SOURCE_DIR}/structures ${CMAKE_SOURCE_DIR}/utils)
