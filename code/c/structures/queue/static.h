@@ -1,3 +1,6 @@
+#ifndef STATIC_QUEUE_H
+#define STATIC_QUEUE_H
+
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,3 +21,5 @@ int squeue_head(Queue* queue);
 int squeue_tail(Queue* queue);
 bool squeue_action(Queue* queue, int option);
 void squeue_destroy(Queue* queue);
+
+#endif

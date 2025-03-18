@@ -1,5 +1,5 @@
-#ifndef DYNAMIC_STACK
-#define DYNAMIC_STACK
+#ifndef DYNAMIC_STACK_H
+#define DYNAMIC_STACK_H
 
 #include <stdbool.h>
 #include "node.h"

@@ -1,5 +1,5 @@
-#ifndef STATIC_STACK
-#define STATIC_STACK
+#ifndef STATIC_STACK_H
+#define STATIC_STACK_H
 
 #include <stdbool.h>
 #include <stdio.h>

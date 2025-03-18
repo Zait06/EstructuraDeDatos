@@ -25,9 +25,6 @@ msg_error() {
   echo -e "${message}"
 }
 
-rm -rf build/
-mkdir build/
-
 structures=(
   'STATIC_STACK'
   'DYNAMIC_STACK'
@@ -38,8 +35,11 @@ structures=(
 if [ $# -eq 0 ]; then
   echo "No arguments"
   msg_error
-  exit 0
+  exit 1
 fi
+
+rm -rf build/
+mkdir build/
 
 flags=()
 if flag_in_array "-all" "$@"; then
@@ -49,7 +49,7 @@ if flag_in_array "-all" "$@"; then
   done
   echo "cmake -B build/ -S . -GNinja ${flags[*]}"
   cmake -B build/ -S . -GNinja "${flags[@]}"
-  exit 0$
+  exit 0
 fi
 
 for flag in "$@"; do
@@ -64,7 +64,7 @@ done
 if [ ${#flags[@]} -eq 0 ]; then
   echo "Unknown option: $@"
   msg_error
-  exit 0
+  exit 1
 fi
 
 echo "cmake -B build/ -S . -GNinja ${flags[*]}"

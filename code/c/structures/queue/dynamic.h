@@ -1,3 +1,6 @@
+#ifndef DYNAMIC_QUEUE_H
+#define DYNAMIC_QUEUE_H
+
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,3 +21,5 @@ Node dqueue_head(Queue* queue);
 Node dqueue_tail(Queue* queue);
 bool dqueue_action(Queue* queue, int option);
 void dqueue_destroy(Queue* queue);
+
+#endif
